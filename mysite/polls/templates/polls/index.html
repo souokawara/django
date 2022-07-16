@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet"  href="style.css">
+<title>テストテンプレート</title>
+<script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<main>
+<p>テストテンプレート</p>
+{% if latest_question_list %}
+  <ul>
+    {% for question in latest_question_list %}
+    <li><a href = "/polls/{{question.id}}/">{{question.question_text}}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Nopolls are available</p>
+{% endif %}
+
+<!-- javascript sandbox -->
+<script type="text/javascript">
+
+function changeF(){
+  var cText = document.getElementByID("c");
+  var fText = document.getElementByID("f");
+}
+
+try{
+  runSomeCode ();
+} catch(err) {
+  var text = "Something is wrong:\n\n"
+          + "Error description:"
+          + err.description + "\n\n";
+  alert(text);
+}
+
+</script>
+<!-- /javascript sandbox -->
+
+<!-- DOM -->
+<input type = "text" id = "c" onchange = "changeC()">C
+<input type = "text" id = "f" onchange = "changeF()">F
+<!-- /DOM -->
+</main>
+<script>
+$(function(){
+});
+
+</script>
+</body>
+</html>
